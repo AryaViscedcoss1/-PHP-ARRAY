@@ -4,15 +4,7 @@
 <head>
 </head>
 <body> 
-<table>
 
-<tr>
-    <th>Category</th>
-    <th>Subcategory</th>
-    <th>ID</th>
-    <th>Name</th>
-    <th>Brand</th>
-</tr>
 <?php  
 
 $products = array(
@@ -89,9 +81,18 @@ $products = array(
       )
     )
         );
+?>
+<h1>Task1 </h1>
+<table>
 
-
-
+<tr>
+<th>Category</th>
+<th>Subcategory</th>
+<th>ID</th>
+<th>Name</th>
+<th>Brand</th>
+</tr>
+<?php
 //task1
 foreach($products as $KCategory=>$VCategory)
 {  
@@ -115,8 +116,20 @@ foreach($products as $KCategory=>$VCategory)
 
      }  
 }
+?>
+</table>
 
+<h1>Task2 </h1>
+<table>
 
+<tr>
+<th>Category</th>
+<th>Subcategory</th>
+<th>ID</th>
+<th>Name</th>
+<th>Brand</th>
+</tr>
+<?php
 
 //task 2
 foreach($products as $KCategory=>$VCategory)
@@ -147,7 +160,14 @@ foreach($products as $KCategory=>$VCategory)
 
      }  
 }
+?>
+</table>
 
+
+<h1>Task3 </h1>
+
+<table>
+<?php
 //task 3
 foreach($products as $KCategory=>$VCategory)
 {   
@@ -159,11 +179,11 @@ foreach($products as $KCategory=>$VCategory)
       
       
       
-        
+      
         if($singlearray['brand']=='Samsung')
          {
-          echo "<tr>";
           
+          echo "<tr>";
           echo "<td>ID : ".$singlearray['id']."</td>";
           echo "</tr>";
           echo "<tr>";
@@ -176,18 +196,32 @@ foreach($products as $KCategory=>$VCategory)
           echo "<tr>";
           echo "<td>Category : ".$KCategory."</td>";
            echo "</tr>";
+         
          }
       
    
 
        }
-   
+       
       
     }
+  
+   
 
-} 
+}
+?> 
+</table>
+<h1>Task4</h1>
+<table>
 
-
+<tr>
+<th>Category</th>
+<th>Subcategory</th>
+<th>ID</th>
+<th>Name</th>
+<th>Brand</th>
+</tr>
+<?php
 //Task no:4
 foreach($products as $KCategory=>$VCategory)
 {  
@@ -204,29 +238,8 @@ foreach($products as $KCategory=>$VCategory)
       }       
 }
 }
-
-//Task no:5
-foreach($products as $KCategory=>$VCategory)
-{  
-    foreach($VCategory as $KsubCategory=>$Vsubcategory)
-    {
- 
-     foreach($Vsubcategory as $skey=>$singlearray)
-     {
-       if ($singlearray['id']=='PR002')
-       {
-        $products[$KCategory][$KsubCategory][$skey]['name']="BIG-555";
-       }
-      
-        
-    }
-   
-      }       
-}
-
-// display use it for task 4 and task 5
-
-/*
+?>
+<?php
 foreach($products as $KCategory=>$VCategory)
 {  
     foreach($VCategory as $KsubCategory=>$Vsubcategory)
@@ -249,8 +262,66 @@ foreach($products as $KCategory=>$VCategory)
 
      }  
 }
-*/
-?>  
+?> 
+</table>
+
+<h1>Task5</h1>
+<table>
+
+<tr>
+<th>Category</th>
+<th>Subcategory</th>
+<th>ID</th>
+<th>Name</th>
+<th>Brand</th>
+</tr>
+
+<?php
+
+//Task no:5
+foreach($products as $KCategory=>$VCategory)
+{  
+    foreach($VCategory as $KsubCategory=>$Vsubcategory)
+    {
+ 
+     foreach($Vsubcategory as $skey=>$singlearray)
+     {
+       if ($singlearray['id']=='PR002')
+       {
+        $products[$KCategory][$KsubCategory][$skey]['name']="BIG-555";
+       }
+      
+        
+    }
+   
+      }       
+}
+
+?>
+<?php
+foreach($products as $KCategory=>$VCategory)
+{  
+    foreach($VCategory as $KsubCategory=>$Vsubcategory)
+    {
+ 
+     foreach($Vsubcategory as $singlearray)
+     {
+        echo "<tr>";
+        echo "<td>".$KCategory."</td>";
+        echo "<td>".$KsubCategory."</td>";
+       foreach($singlearray as $key=>$value)
+       {   
+        
+        echo "<td>".$value."</td>";
+          
+       }
+       echo "</tr>";
+      
+    }
+
+     }  
+}
+?> 
 </table>
 </body>  
 </html>  
